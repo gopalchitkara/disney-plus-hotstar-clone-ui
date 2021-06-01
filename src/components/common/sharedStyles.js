@@ -31,8 +31,16 @@ const WatchContentContainer = styled(MainContainer)`
 const WatchAreaContainer = styled.div``
 
 const WatchArea = styled.div`
-    height: 75vh;
+    height: 50vh;
     background: rgba(0,0,0,1);
+
+    @media screen and (min-width: 576px) {
+        height: 65vh;
+    }
+
+    @media screen and (min-width: 768px) {
+        height: 75vh;
+    }
 `
 
 const ContentDetailWrapper = styled.div`

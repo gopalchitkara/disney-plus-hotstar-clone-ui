@@ -19,12 +19,15 @@ function UserAuthInNav() {
                         <i class="fas fa-user"></i>
                     </ProfilePicture>
                     <UserMenu>
-                        <MenuItem
+                        {/* <MenuItem
                             onClick={() => history.push("/watchlist")}
-                        >Watchlist</MenuItem>
-                        <MenuItem
+                        >Watchlist</MenuItem> */}
+                        {/* <MenuItem
                             onClick={() => history.push("/my-account")}
-                        >My Account</MenuItem>
+                        >My Account</MenuItem> */}
+                        <MenuItem
+                            onClick={() => history.push("/")}
+                        >Home</MenuItem>
                         <MenuItem
                             onClick={() => { dispatch(logoutUser()) }}
                         >Logout</MenuItem>

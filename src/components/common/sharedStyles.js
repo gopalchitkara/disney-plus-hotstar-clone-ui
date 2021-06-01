@@ -35,15 +35,6 @@ const WatchArea = styled.div`
     background: rgba(0,0,0,1);
 `
 
-const LoadingContent = styled.div`
-    display: flex;
-    flex-direction: row;
-    height: inherit;
-    width: 100%;
-    justify-content:center;
-    align-items: center;
-`
-
 const ContentDetailWrapper = styled.div`
     padding: 0 calc(2.5vw + 10px);
     margin-top: 30px;
@@ -91,6 +82,6 @@ const RelatedContentContainer = styled.div`
 
 
 export {
-    MainContainer, loadingBg, WatchContentContainer, WatchAreaContainer, WatchArea, LoadingContent,
+    MainContainer, loadingBg, WatchContentContainer, WatchAreaContainer, WatchArea,
     ContentDetailWrapper, ContentDetailContainer, Meta, MetaItem, RelatedContentContainer
 }

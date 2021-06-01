@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components/macro'
-import { MainContainer } from '../common/sharedStyles'
 import ReactPlayer from 'react-player/youtube'
 import { useParams, useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
@@ -10,9 +8,10 @@ import { Fragment } from 'react'
 import LockedContentScreen from '../authorization/LockedContentScreen'
 import MediaRelatedContent from '../relatedContent/MediaRelatedContent'
 import {
-    WatchContentContainer, WatchAreaContainer, WatchArea, LoadingContent,
+    WatchContentContainer, WatchAreaContainer, WatchArea,
     ContentDetailWrapper, ContentDetailContainer, Meta, MetaItem, RelatedContentContainer
 } from '../common/sharedStyles'
+import LoadingScreen from '../LoadingScreen'
 
 function WatchMovie() {
     const [movie, setMovie] = useState({});
@@ -65,7 +64,13 @@ function WatchMovie() {
     return (
         <Fragment>
             {userDetail && !userDetail.isAuthorized ? (
-                <LockedContentScreen />
+                <>
+                    {!movie || !movie.id ? (
+                        <LoadingScreen mode="full" />
+                    ) : (
+                        <LockedContentScreen thumbnail={movie.images.v} />
+                    )}
+                </>
             ) : (
                 <WatchContentContainer>
                     <WatchAreaContainer>
@@ -82,9 +87,7 @@ function WatchMovie() {
                                     onDuration={onDuration}
                                 />
                             ) : (
-                                <LoadingContent>
-                                    <i className="fas fa-spinner fa-3x fa-spin"></i>
-                                </LoadingContent>
+                                <LoadingScreen />
                             )}
                         </WatchArea>
                     </WatchAreaContainer>

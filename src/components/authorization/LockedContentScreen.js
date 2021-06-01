@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import UserAuthInNav from '../header/UserAuthInNav'
+import { loginAsGuest } from '../../redux/authSlice';
 
-function LockedContentScreen() {
-    const [thumbnailUrl, setThumbnailUrl] = useState("/media/images/content/the-mandalorian-s2-v.webp")
+function LockedContentScreen({ thumbnail }) {
+    const dispatch = useDispatch();
+
     return (
         <Fragment>
             <LockedBanner>
@@ -22,30 +25,99 @@ function LockedContentScreen() {
                 </TopBar>
                 <ImageWrapper>
                     <CardThumbnail>
-                        <ImageContainer style={{ backgroundImage: `url("${thumbnailUrl}")` }} />
+                        <ImageContainer style={{ backgroundImage: `url("${thumbnail}")` }} />
                     </CardThumbnail>
                 </ImageWrapper>
                 <ContentInfoWrapper>
                     <Title>Login to watch</Title>
-                    {/* <ContentInfo>
+                    <ContentInfo>
                         <ContentTable style={{ width: "100%" }}>
-                            <TableRow>
-                                <TableHeading></TableHeading>
-                                <TableHeading>Unregistered</TableHeading>
-                                <TableHeading>Logged in</TableHeading>
-                            </TableRow>
-                            <TableRow>
-                                <TableData >Title 1</TableData>
-                                <TableData>X</TableData>
-                                <TableData>Y</TableData>
-                            </TableRow>
-                            <TableRow>
-                                <TableData>Title 2</TableData>
-                                <TableData>X</TableData>
-                                <TableData>Y</TableData>
-                            </TableRow>
+                            <thead>
+                                <TableRow>
+                                    <TableHeading></TableHeading>
+                                    <TableHeading>Free</TableHeading>
+                                    <TableHeading>Registered</TableHeading>
+                                </TableRow>
+                            </thead>
+                            <tbody >
+                                <TableRow>
+                                    <TableDataLeft>Disney+ movies, Hollywood movies & Kids content</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>Only Dubbed</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>English + Dubbed</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>Multiplex & new Indian movies</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>English shows & Disney+ Originals</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>Ad free entertainment</TableDataLeft>
+                                    <TableData>
+                                        <i class="fas fa-times"></i>
+                                    </TableData>
+                                    <TableData>
+                                        <i class="fas fa-check"></i>
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>Screens you can watch on</TableDataLeft>
+                                    <TableData>
+                                        1
+                                    </TableData>
+                                    <TableData>
+                                        2
+                                    </TableData>
+                                </TableRow>
+                                <TableRow>
+                                    <TableDataLeft>Video quality</TableDataLeft>
+                                    <TableData>
+                                        SD
+                                    </TableData>
+                                    <TableData>
+                                        HD
+                                    </TableData>
+                                </TableRow>
+                            </tbody>
                         </ContentTable>
-                    </ContentInfo> */}
+                        <LoginButton
+                            onClick={() => { dispatch(loginAsGuest()) }}
+                        >Continue to fake login</LoginButton>
+                    </ContentInfo>
                 </ContentInfoWrapper>
             </LockedContentWrapper>
         </Fragment>
@@ -53,6 +125,18 @@ function LockedContentScreen() {
 }
 
 export default LockedContentScreen
+
+const LoginButton = styled.div`
+    margin-top: 10px;
+    width: 100%;
+    background: #1f80e0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    color: rgba(255,255,255,1);
+`
 
 const LockedBanner = styled.div`
     /* width: 100%; */
@@ -151,12 +235,29 @@ const Title = styled.div`
     font-weight: 500;
 `
 
-const ContentTable = styled.table``
-const TableRow = styled.tr``
+const ContentTable = styled.table`
+    border: none !important;
+`
+const TableRow = styled.tr`
+    border-bottom: solid 1px black;
+`
 const TableHeading = styled.th`
     text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding-bottom: 10px;
+
 `
 const TableData = styled.td`
     text-align: center;
+    font-size: 0.8rem;
+    padding: 3px 0px;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
 `
+
+const TableDataLeft = styled(TableData)`
+    text-align: left;
+`
+
+
 

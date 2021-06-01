@@ -124,6 +124,17 @@ const SubInfo = styled.div`
     font-size: 0.6rem;
     margin-top: 2px;
     color: rgba(255,255,255,1);
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
 `
 
-const Actions = styled.div``
+const Actions = styled.div`
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
+`

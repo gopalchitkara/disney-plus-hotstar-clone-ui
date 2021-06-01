@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { useSelector, useDispatch } from 'react-redux'
 import { addToWatchlist, removeFromWatchlist } from '../../redux/watchlistSlice'
@@ -20,7 +20,6 @@ function TvDetail() {
 
     const { show_id } = useParams();
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const { data: showData, isPending, error } = useFetch(`/api/shows/${show_id}`) //eslint-disable-line
     const { data: seasonsData } = useFetch(`/api/shows/${show_id}/seasons`) //eslint-disable-line

@@ -15,7 +15,6 @@ function MediaRelatedContent({ contentId, contentType }) {
     const { data: similarContentData } = useFetch(`/api/${contentType}s/${contentId}/similar-content`);
 
     useEffect(() => {
-        console.log("trailerData, extraData")
         if (trailerData && trailerData.trailers && extraData && extraData.extras) {
             setTrailerAndExtras({
                 title: "Trailers & Extras",
@@ -26,7 +25,6 @@ function MediaRelatedContent({ contentId, contentType }) {
     }, [trailerData, extraData])
 
     useEffect(() => {
-        console.log("bonusData")
         if (bonusData && bonusData.bonuses) {
             setBonusContent({
                 title: "Bonus Content",
@@ -37,7 +35,6 @@ function MediaRelatedContent({ contentId, contentType }) {
     }, [bonusData])
 
     useEffect(() => {
-        console.log("similarContentData")
         if (similarContentData && similarContentData.similarContent && similarContentData.similarContent.length > 0) {
             setSimilarContent({
                 title: "More Like This",

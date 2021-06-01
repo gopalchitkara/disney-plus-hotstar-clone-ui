@@ -43,55 +43,55 @@ function LockedContentScreen({ thumbnail }) {
                                 <TableRow>
                                     <TableDataLeft>Disney+ movies, Hollywood movies & Kids content</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>
                                     <TableDataLeft>Only Dubbed</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>
                                     <TableDataLeft>English + Dubbed</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>
                                     <TableDataLeft>Multiplex & new Indian movies</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>
                                     <TableDataLeft>English shows & Disney+ Originals</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>
                                     <TableDataLeft>Ad free entertainment</TableDataLeft>
                                     <TableData>
-                                        <i class="fas fa-times"></i>
+                                        <i className="fas fa-times"></i>
                                     </TableData>
                                     <TableData>
-                                        <i class="fas fa-check"></i>
+                                        <i className="fas fa-check"></i>
                                     </TableData>
                                 </TableRow>
                                 <TableRow>

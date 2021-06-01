@@ -20,8 +20,6 @@ function WatchMovie() {
     const currentlyWatchingItems = useSelector((state) => state.currentlyWatching.items);
     const userDetail = useSelector((state) => state.auth.userDetail);
 
-    // console.log({ userDetail })
-
     const { movie_id } = useParams();
     const dispatch = useDispatch();
     const history = useHistory();

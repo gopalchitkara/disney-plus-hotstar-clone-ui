@@ -12,10 +12,6 @@ function ContentTray({ showTitle = true, trayDetail }) {
     const [traySettings, setTraySettings] = useState(null)
 
     useEffect(() => {
-        console.log({ trayDetail })
-    }, [trayDetail])
-
-    useEffect(() => {
         trayDetail && trayDetail.title && trayDetail.title !== "" ? setTitle(trayDetail.title) : setTitle(null);
         trayDetail && trayDetail.items && trayDetail.items.length > 0 ? setItems(trayDetail.items) : setItems(null);
         trayDetail && trayDetail.orientation && trayDetail.orientation !== "" ? setOrientation(trayDetail.orientation) : setOrientation(null);

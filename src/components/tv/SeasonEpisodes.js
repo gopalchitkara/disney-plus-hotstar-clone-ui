@@ -241,12 +241,6 @@ const ContentTitle = styled.div`
     color: rgba(255,255,255,1);
 `
 
-const SubInfo = styled.div`
-    font-size: 0.6rem;
-    margin-top: 2px;
-`
-
-
 const Description = styled.div`
     font-size: 0.6rem;
     font-weight: 200;

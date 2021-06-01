@@ -32,7 +32,6 @@ export const watchlistSlice = createSlice({
         },
         addToWatchlist: (state, { payload }) => {
             const { data } = payload;
-            console.log({ data })
             console.log("adding new item to watchlist. id:" + data.id + " and type: " + data.contentType);
             let _item = state.items.find(x => x.id === parseInt(data.id));
             if (!_item && data.id && data.contentType && data.contentType !== "") {
@@ -56,7 +55,6 @@ export const watchlistSlice = createSlice({
         removeFromWatchlist: (state, { payload }) => {
             console.log("removing item from watchlist. id:" + payload.id);
             let _items = state.items.filter(x => x.id !== parseInt(payload.id));
-            console.log({ _items })
             state.items = _items;
 
             window.localStorage.setItem('watchlistLocalState', JSON.stringify(state.items));

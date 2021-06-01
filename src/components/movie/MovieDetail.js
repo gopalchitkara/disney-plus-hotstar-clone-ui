@@ -13,7 +13,7 @@ import MediaRelatedContent from '../relatedContent/MediaRelatedContent'
 function MovieDetail() {
     const [movie, setMovie] = useState({});
     const [inWatchlist, setInWatchlist] = useState(false)
-    const [isWatching, setIsWatching] = useState(false)
+    const [isWatching, setIsWatching] = useState(false) //eslint-disable-line
 
     const watchlistItems = useSelector((state) => state.watchlist.items);
 

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { getDefaultNormalizer } from '@testing-library/dom';
 
 export const authSlice = createSlice({
     name: 'auth',
@@ -16,11 +15,9 @@ export const authSlice = createSlice({
     },
     reducers: {
         showLoginScreen: (state) => {
-            console.log("login screen visible");
             state.showLoginScreen = true;
         },
         hideLoginScreen: (state) => {
-            console.log("hiding login screen");
             state.showLoginScreen = false;
         },
         loadInitialAuth: (state, { payload }) => {

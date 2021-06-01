@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { useSelector, useDispatch } from 'react-redux'
-import { setAuthorized, setUnauthorized } from '../../redux/authSlice'
+// import { setAuthorized, setUnauthorized } from '../../redux/authSlice'
 import { showLoginScreen, logoutUser } from '../../redux/authSlice';
 
 function UserAuthInNav() {
@@ -16,7 +16,7 @@ function UserAuthInNav() {
                 <DropdownContainer>
                     {/* <ProfilePicture src="/media/images/user-profile-picture.jpg" alt="" /> */}
                     <ProfilePicture>
-                        <i class="fas fa-user"></i>
+                        <i className="fas fa-user"></i>
                     </ProfilePicture>
                     <UserMenu>
                         {/* <MenuItem

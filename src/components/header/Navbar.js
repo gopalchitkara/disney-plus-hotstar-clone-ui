@@ -69,30 +69,30 @@ const Navigations = styled.div`
     }
 `
 
-const Navul = styled.ul`
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    color: rgba(255, 255, 255, 1);;
-    padding-left: 0;
-`
+// const Navul = styled.ul`
+//     display: flex;
+//     flex-direction: row;
+//     list-style-type: none;
+//     color: rgba(255, 255, 255, 1);;
+//     padding-left: 0;
+// `
 
-const Navli = styled.li`
-   
-`
+// const Navli = styled.li`
 
-const NavLink = styled(Link)`
-    padding: 0 15px;
-    cursor: pointer;
-    /* position: relative; */
-    color: rgba(255, 255, 255, 0.8);
-    transition: all 100ms ease-in-out;
-    text-decoration: none;
+// `
 
-    &:hover {
-        color: rgba(255, 255, 255, 1);
-    };
-`
+// const NavLink = styled(Link)`
+//     padding: 0 15px;
+//     cursor: pointer;
+//     /* position: relative; */
+//     color: rgba(255, 255, 255, 0.8);
+//     transition: all 100ms ease-in-out;
+//     text-decoration: none;
+
+//     &:hover {
+//         color: rgba(255, 255, 255, 1);
+//     };
+// `
 
 const SearchContainer = styled.div`
 `

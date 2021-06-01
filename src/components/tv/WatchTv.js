@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ReactPlayer from 'react-player'
-import { useParams, useHistory } from 'react-router-dom'
-import styled from 'styled-components/macro'
-import { MainContainer } from '../common/sharedStyles'
+import { useParams } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { addToCurrentlyWatching, updateTimeWatched } from '../../redux/currentlyWatchingSlice'
 import useFetch from '../../customHooks/useFetch'
@@ -24,7 +22,6 @@ function WatchTv() {
     const userDetail = useSelector((state) => state.auth.userDetail);
 
     const { show_id, season_no, episode_no } = useParams();
-    const history = useHistory();
     const dispatch = useDispatch();
 
 
@@ -41,7 +38,6 @@ function WatchTv() {
             }
 
             setEpisode(episodeData.episode)
-            console.log({ episode: episodeData.episode })
         }
     }, [isEpisodePending, episodeData]) //eslint-disable-line
 

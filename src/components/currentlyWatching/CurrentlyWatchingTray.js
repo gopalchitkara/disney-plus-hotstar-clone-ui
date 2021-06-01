@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import Slider from 'react-slick'
-import styled from 'styled-components/macro'
 import CurrentlyWatchingCard from './CurrentlyWatchingCard'
 import { loadInitialState } from '../../redux/currentlyWatchingSlice'
 import { verticalTraySettings } from '../common/sharedConfigurations'
@@ -17,7 +16,6 @@ function CurrentlyWatchingTray() {
 
     useEffect(() => {
         let storedItems = JSON.parse(window.localStorage.getItem('currentlyWatchingLocalState'));
-        // console.log({ storedItems })
 
         if (storedItems && storedItems !== null) {
             dispatch(loadInitialState(storedItems))

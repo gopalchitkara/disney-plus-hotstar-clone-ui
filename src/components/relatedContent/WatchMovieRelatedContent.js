@@ -21,14 +21,6 @@ function WatchMovieRelatedContent() {
     const { data: relatedData, isPending: isRelatedPending, error: relatedError }
         = useFetch(`/api/${parent_content_type}s/${parent_content_id}/related-content/${content_type}s/${content_id}`) //eslint-disable-line
 
-    useEffect(() => {
-        console.log({ contentData })
-    }, [contentData])
-
-
-    useEffect(() => {
-        console.log({ relatedData })
-    }, [relatedData])
     // useEffect(() => {
     //     let item = {};
     //     switch (content_type) {

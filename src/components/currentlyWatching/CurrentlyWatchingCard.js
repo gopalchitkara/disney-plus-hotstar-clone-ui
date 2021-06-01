@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components/macro'
+import styled from 'styled-components/macro'
 import useFetch from '../../customHooks/useFetch';
 import { removeFromCurrentlyWatching, updateTimeWatched } from '../../redux/currentlyWatchingSlice'
 import {
-    VerticalCardWrapper, VerticalImageContainer, CardContent, CardDetails, CardTitle,
-    CardDescription, AddToWatchlist, AddToWatchlistTitle, CardThumbnail
+    VerticalCardWrapper, VerticalImageContainer, CardContent, CardTitle,
+    CardDescription, CardThumbnail
 } from '../common/sharedCardTrayStyles'
 
 
@@ -17,11 +17,10 @@ function CurrentlyWatchingCard({ details }) {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const { data, isPending, error } = useFetch(`/api/${details.contentType}s/${details.contentId}`)
+    const { data, isPending } = useFetch(`/api/${details.contentType}s/${details.contentId}`)
 
     useEffect(() => {
         if (data) {
-            console.log({ data });
             if (details.contentType === "movie")
                 setContent(data.movie);
             else if (details.contentType === "episode")

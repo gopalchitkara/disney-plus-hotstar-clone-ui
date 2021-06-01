@@ -10,14 +10,6 @@ function Card({ item, orientation }) {
     const [details, setDetails] = useState(null)
     const [targetUrl, setTargetUrl] = useState(null)
 
-    // useEffect(() => {
-    //     console.log({ item })
-    // }, [item])
-
-    // useEffect(() => {
-    //     console.log({ targetUrl })
-    // }, [targetUrl])
-
     useEffect(() => {
         if (item && item.contentType && item.contentType !== "") {
             switch (item.contentType) {

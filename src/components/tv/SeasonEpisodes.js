@@ -99,7 +99,7 @@ const Meta = styled.ul`
     font-size: 1.4rem;
     display: flex;
     flex-direction: row;
-    margin: 15px 0px 20px -15px; 
+    margin: 15px 0px 20px -15px;
     padding-top: 30px;
 
     @media screen and (min-width: 576px) {
@@ -141,8 +141,25 @@ const CardsContainer = styled.div`
 `
 
 const HorizontalCardWrapper = styled.div`
-    width: calc(calc(100vw - 85px) / 5.293);
-    margin: 5px 5px;
+    /* width: calc(calc(100vw - 85px) / 5.293); */
+    width: calc(calc(100vw - 25px) / 2.293);
+
+    @media screen and (min-width: 576px) {
+        width: calc(calc(100vw - 45px) / 3.293);
+    }
+
+    @media screen and (min-width: 768px) {
+        width: calc(calc(100vw - 65px) / 4.293);
+    }
+
+    @media screen and (min-width: 992px) {
+        width: calc(calc(100vw - 85px) / 5.293);
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: calc(calc(100vw - 85px) / 6.293);
+    }
+    padding: 5px 5px;
 `
 
 const CardContent = styled.article`

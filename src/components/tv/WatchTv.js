@@ -11,9 +11,10 @@ import LockedContentScreen from '../authorization/LockedContentScreen'
 import MediaRelatedContent from '../relatedContent/MediaRelatedContent'
 import ContentTray from '../trayAndCards/ContentTray'
 import {
-    WatchContentContainer, WatchAreaContainer, WatchArea, LoadingContent,
+    WatchContentContainer, WatchAreaContainer, WatchArea,
     ContentDetailWrapper, ContentDetailContainer, Meta, MetaItem, RelatedContentContainer
 } from '../common/sharedStyles'
+import LoadingScreen from '../LoadingScreen'
 
 function WatchTv() {
     const [episode, setEpisode] = useState({});
@@ -26,6 +27,8 @@ function WatchTv() {
     const history = useHistory();
     const dispatch = useDispatch();
 
+
+    const { data: showData, isPending, error } = useFetch(`/api/shows/${show_id}`) //eslint-disable-line
     const { data: episodeData, isPending: isEpisodePending } = useFetch(`/api/shows/${show_id}/seasons/${season_no}/episode/${episode_no}`) //eslint-disable-line
     const { data: seasonsData } = useFetch(`/api/shows/${show_id}/seasons`) //eslint-disable-line
     const { data: episodesData } = useFetch(`/api/shows/${show_id}/episodes`) //eslint-disable-line
@@ -67,7 +70,13 @@ function WatchTv() {
     return (
         <Fragment>
             {userDetail && !userDetail.isAuthorized ? (
-                <LockedContentScreen />
+                <>
+                    {!showData || !showData.show.id ? (
+                        <LoadingScreen mode="full" />
+                    ) : (
+                        <LockedContentScreen thumbnail={showData.show.images.v} />
+                    )}
+                </>
             ) : (
                 <WatchContentContainer>
                     <WatchAreaContainer>
@@ -84,9 +93,7 @@ function WatchTv() {
                                     onDuration={onDuration}
                                 />
                             ) : (
-                                <LoadingContent>
-                                    <i className="fas fa-spinner fa-3x fa-spin"></i>
-                                </LoadingContent>
+                                <LoadingScreen />
                             )}
                         </WatchArea>
                     </WatchAreaContainer>

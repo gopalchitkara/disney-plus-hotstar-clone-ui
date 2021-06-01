@@ -28,7 +28,8 @@ function ChannelTray() {
                                             onLoad={() => { document.getElementById(channel.channelName + "-video").play(); }}
                                         >
                                             <Link to={"/channel/" + channel.channelName}>
-                                                <img src={channel.imagePath} alt={channel.channelName} />
+                                                {/* <img src={channel.imagePath} alt={channel.channelName} /> */}
+                                                <img src={channel.imagePath} alt="" />
                                                 <video loop muted id={channel.channelName + "-video"}>
                                                     <source src={channel.videoPath} type="video/mp4" />
                                                 </video>

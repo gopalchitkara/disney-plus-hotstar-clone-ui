@@ -14,7 +14,10 @@ function UserAuthInNav() {
         <UserProfile>
             {userDetail && userDetail.isAuthorized ? (
                 <DropdownContainer>
-                    <ProfilePicture src="/media/images/user-profile-picture.jpg" alt="" />
+                    {/* <ProfilePicture src="/media/images/user-profile-picture.jpg" alt="" /> */}
+                    <ProfilePicture>
+                        <i class="fas fa-user"></i>
+                    </ProfilePicture>
                     <UserMenu>
                         <MenuItem
                             onClick={() => history.push("/watchlist")}
@@ -100,7 +103,8 @@ const MenuItem = styled.li`
     }
 `
 
-const ProfilePicture = styled.img`
+// const ProfilePicture = styled.img`
+const ProfilePicture = styled.span`
     height: 30px;
     width: 30px;
     border-radius: 50%;
@@ -108,5 +112,11 @@ const ProfilePicture = styled.img`
     
     &:hover ~ ${UserMenu} {
         display: flex;
+    }
+
+    i {
+        font-size: 1.4rem;
+        cursor: pointer;
+        display: block;
     }
 `

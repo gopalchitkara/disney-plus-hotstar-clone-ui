@@ -11,6 +11,7 @@ function LockedContentScreen({ thumbnail }) {
 
     return (
         <Fragment>
+            <LockedCover />
             <LockedBanner>
                 <img src="/media/images/psp-background.webp" alt="" />
             </LockedBanner>
@@ -126,16 +127,13 @@ function LockedContentScreen({ thumbnail }) {
 
 export default LockedContentScreen
 
-const LoginButton = styled.div`
-    margin-top: 10px;
-    width: 100%;
-    background: #1f80e0;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 500;
-    color: rgba(255,255,255,1);
+const LockedCover = styled.div`
+    background: #192133;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%
 `
 
 const LockedBanner = styled.div`
@@ -188,7 +186,21 @@ const ImageWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: -40px;
+    margin-top: 0px;
+
+    @media screen and (min-width: 576px) {
+    }
+
+    @media screen and (min-width: 768px) {
+        margin-top: -20px;
+    }
+
+    @media screen and (min-width: 992px) {
+        margin-top: -40px;
+    }
+
+    @media screen and (min-width: 1200px) {
+    }
 `
 
 const CardThumbnail = styled.div`
@@ -214,11 +226,27 @@ const ImageContainer = styled.div`
 
 const ContentInfoWrapper = styled.div`
     display: block;
-    width: 60vw;
+    width: 95vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+
+    @media screen and (min-width: 576px) {
+        width: 90vw;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 85vw;
+    }
+
+    @media screen and (min-width: 992px) {
+        width: 75vw;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 60vw;
+    }
 `
 
 const ContentInfo = styled.div`
@@ -259,5 +287,14 @@ const TableDataLeft = styled(TableData)`
     text-align: left;
 `
 
-
-
+const LoginButton = styled.div`
+    margin-top: 10px;
+    width: 100%;
+    background: #1f80e0;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    color: rgba(255,255,255,1);
+`

@@ -86,7 +86,7 @@ const featuredTraySettings = {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 8000,
     fade: false,
     pauseOnHover: false,

@@ -123,6 +123,11 @@ const CardDescription = styled.div`
     font-weight: 200;
     color: rgba(255,255,255,0.8);
     margin-top: 2px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: block;
+    }
 `
 
 const AddToWatchlist = styled.div`

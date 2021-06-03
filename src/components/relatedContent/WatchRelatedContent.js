@@ -8,6 +8,7 @@ import {
     ContentDetailWrapper, ContentDetailContainer, Meta, MetaItem
 } from '../common/sharedStyles'
 import useFetch from '../../customHooks/useFetch';
+import Cooking from '../Cooking';
 
 function WatchRelatedContent() {
     const [movie, setMovie] = useState({})
@@ -67,37 +68,38 @@ function WatchRelatedContent() {
     // }, [movie_id])
 
     return (
-        <WatchContentContainer>
-            <WatchAreaContainer>
-                {/* <WatchArea>
-                    {playbackUrl && playbackUrl !== "" ? (
-                        <ReactPlayer
-                            controls
-                            playing={true}
-                            url={playbackUrl}
-                            width='100%'
-                            height='100%'
-                        />
-                    ) : (<>loading...</>)}
-                </WatchArea> */}
-            </WatchAreaContainer>
-            <ContentDetailWrapper>
-                {/* <ContentDetailContainer>
-                    <h2><Link to={`/movie/${movie.title_clean}/${movie.id}`}>{movie.title}</Link></h2>
-                    <Meta>
-                        {movie.genre !== "" ? <MetaItem>{movie.genre}</MetaItem> : <></>}
-                        {movie.censor_rating !== "" ? <MetaItem>{movie.censor_rating}</MetaItem> : <></>}
-                        {movie.channel_name !== "" ? <MetaItem>{movie.channel_name}</MetaItem> : <></>}
-                    </Meta>
-                    <p>{movie.description}</p>
-                    {watchMovie.items && watchMovie.items.length > 0 &&
-                        <WatchNowContainer>
-                            <ContentTray trayDetail={watchMovie} />
-                        </WatchNowContainer>
-                    }
-                </ContentDetailContainer> */}
-            </ContentDetailWrapper>
-        </WatchContentContainer>
+        <Cooking />
+        // <WatchContentContainer>
+        //     <WatchAreaContainer>
+        //         <WatchArea>
+        //             {playbackUrl && playbackUrl !== "" ? (
+        //                 <ReactPlayer
+        //                     controls
+        //                     playing={true}
+        //                     url={playbackUrl}
+        //                     width='100%'
+        //                     height='100%'
+        //                 />
+        //             ) : (<>loading...</>)}
+        //         </WatchArea>
+        //     </WatchAreaContainer>
+        //     <ContentDetailWrapper>
+        //         <ContentDetailContainer>
+        //             <h2><Link to={`/movie/${movie.title_clean}/${movie.id}`}>{movie.title}</Link></h2>
+        //             <Meta>
+        //                 {movie.genre !== "" ? <MetaItem>{movie.genre}</MetaItem> : <></>}
+        //                 {movie.censor_rating !== "" ? <MetaItem>{movie.censor_rating}</MetaItem> : <></>}
+        //                 {movie.channel_name !== "" ? <MetaItem>{movie.channel_name}</MetaItem> : <></>}
+        //             </Meta>
+        //             <p>{movie.description}</p>
+        //             {watchMovie.items && watchMovie.items.length > 0 &&
+        //                 <WatchNowContainer>
+        //                     <ContentTray trayDetail={watchMovie} />
+        //                 </WatchNowContainer>
+        //             }
+        //         </ContentDetailContainer>
+        //     </ContentDetailWrapper>
+        // </WatchContentContainer>
     )
 }
 

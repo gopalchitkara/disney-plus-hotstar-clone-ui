@@ -13,6 +13,7 @@ import {
     ContentDetailWrapper, ContentDetailContainer, Meta, MetaItem, RelatedContentContainer
 } from '../common/sharedStyles'
 import LoadingScreen from '../LoadingScreen'
+import Cooking from '../Cooking'
 
 function WatchTv() {
     const [episode, setEpisode] = useState({});
@@ -89,7 +90,13 @@ function WatchTv() {
                                     onDuration={onDuration}
                                 />
                             ) : (
-                                <LoadingScreen />
+                                <>
+                                    {isEpisodePending ? (
+                                        <LoadingScreen />
+                                    ) : (
+                                        <h3 style={{ paddingTop: 50, marginLeft: 50 }}>This video is still cooking...</h3>
+                                    )}
+                                </>
                             )}
                         </WatchArea>
                     </WatchAreaContainer>
@@ -98,10 +105,10 @@ function WatchTv() {
                             <ContentDetailContainer>
                                 <h2>{episode.showTitle}</h2>
                                 <Meta>
-                                    {episode.title !== "" && <MetaItem>{episode.title}</MetaItem>}
-                                    {episode.seasonNumber !== "" && episode.episodeNumber !== "" && <MetaItem>{`S${episode.seasonNumber} E${episode.episodeNumber}`}</MetaItem>}
-                                    {episode.showChannelName !== "" && <MetaItem>{episode.showChannelName}</MetaItem>}
-                                    {episode.showCensorRating !== "" && <MetaItem>{episode.showCensorRating}</MetaItem>}
+                                    {episode.title && episode.title !== "" && <MetaItem>{episode.title}</MetaItem>}
+                                    {episode.seasonNumber && episode.seasonNumber !== "" && episode.episodeNumber !== "" && <MetaItem>{`S${episode.seasonNumber} E${episode.episodeNumber}`}</MetaItem>}
+                                    {episode.showChannelName && episode.showChannelName !== "" && <MetaItem>{episode.showChannelName}</MetaItem>}
+                                    {episode.showCensorRating && episode.showCensorRating !== "" && <MetaItem>{episode.showCensorRating}</MetaItem>}
                                 </Meta>
                                 <p>{episode.description}</p>
                             </ContentDetailContainer>

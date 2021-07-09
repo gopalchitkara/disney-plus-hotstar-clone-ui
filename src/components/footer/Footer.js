@@ -15,7 +15,7 @@ function Footer() {
                     </ul>
                     <p>
                         HBO, Home Box Office and all related channel and programming logos are service marks of, and all related programming visuals and elements are the property of, Home Box Office, Inc. and are only used in this clone for learning and educational purposes. All rights reserved by them. © 2021 STAR. All Rights Reserved by them.
-                </p>
+                    </p>
                 </FooterLeft>
                 <FooterRight>
                     <SocialLinks>
@@ -32,7 +32,7 @@ function Footer() {
                                 </a>
                             </Button>
                             <Button>
-                                <a href="https://github.com/gopalchitkara/" target="_blank" rel="noreferrer">
+                                <a href="https://github.com/gopalchitkara/disney-plus-hotstar-clone-ui" target="_blank" rel="noreferrer">
                                     <LinkIcon className="fab fa-github fa-2x"></LinkIcon>
                                 </a>
                             </Button>

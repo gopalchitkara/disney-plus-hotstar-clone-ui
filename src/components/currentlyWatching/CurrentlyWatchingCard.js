@@ -76,7 +76,7 @@ function CurrentlyWatchingCard({ details }) {
                     </CardThumbnail>
                 </CardContent>
             ) : (
-                <CardContent>
+                <CardContentCustom>
                     <Link to={targetUrl}>
                         <CardThumbnail>
                             <VerticalImageContainer style={{ backgroundImage: `url("${content.images.h}")` }} />
@@ -108,13 +108,22 @@ function CurrentlyWatchingCard({ details }) {
                     </Link>
                     <ProgressBar />
                     <ProgressBarCovered style={{ width: `${(details.timeWatched / details.duration) * 100}%` }} />
-                </CardContent>
+                </CardContentCustom>
             )}
         </VerticalCardWrapper>
     )
 }
 
 export default CurrentlyWatchingCard
+
+const CardContentCustom = styled(CardContent)`
+
+    &:hover {
+        .card-data {
+            opacity: 1;
+        }
+    }
+`
 
 const EpisodeTitle = styled.div`
     display: inline-block;
